@@ -1,0 +1,20 @@
+-- The GROUP BY clause can also be used in conjunction with WHERE clauses. The WHERE clause is performed
+--  prior to the aggregation and grouping. For instance, the Song table
+--      | id | artist          | song                | runtime |
+--      |----|-----------------|---------------------|---------|
+--      |1   | 'Peter Gabriel' |'Solsbury Hill'      | 261     |
+--      |2   | 'Peter Gabriel' |'In your eyes'       | 323     |
+--      |3   | 'Phil Collins'  |'In the air tonight' | 299     |
+--      |4   | 'Kate Bush'     |'Wuthering Heights'  | 244     |
+--      |5   | 'Kate Bush'     |'Babooshka'          | 206     |
+--      |6   | 'Kate Bush'     |'Cloudbusting'       | 306     |
+-- and SQL query
+--  SELECT artist, AVG(runtime) from Song WHERE runtime < 300 GROUP BY artist
+-- will produce the result
+--      | artist          | avg(runtime) |
+--      | 'Peter Gabriel' | 261          |
+--      | 'Phil Collins'  | 299          |
+--      | 'Kate Bush'     | 225          |
+-- Notice that the averages follow the exclusion of all values >= 300.
+-- TODO: write a SQL statement that produces the number of songs with a runtime over 240 using the
+--  COUNT aggregate function, containing two columns: 'artist' and the aggregate function.

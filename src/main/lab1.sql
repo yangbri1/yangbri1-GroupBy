@@ -1,0 +1,21 @@
+-- The GROUP BY clause is used in conjunction with aggregate queries to perform an aggregation
+-- that is separated between like values. For instance, consider the following Song table:
+--      | id | artist          | song                | runtime |
+--      |----|-----------------|---------------------|---------|
+--      |1   | 'Peter Gabriel' |'Solsbury Hill'      | 261     |
+--      |2   | 'Peter Gabriel' |'In your eyes'       | 323     |
+--      |3   | 'Phil Collins'  |'In the air tonight' | 299     |
+--      |4   | 'Kate Bush'     |'Wuthering Heights'  | 244     |
+--      |5   | 'Kate Bush'     |'Babooshka'          | 206     |
+--      |6   | 'Kate Bush'     |'Cloudbusting'       | 306     |
+-- To get the average song runtime per-artist, we could use the command
+--      SELECT artist, AVG(runtime) FROM Song GROUP BY artist
+-- Which would produce the result
+--      | artist          | AVG(runtime) |
+--      | 'Peter Gabriel' | 292          |
+--      | 'Phil Collins'  | 299          |
+--      | 'Kate Bush'     | 252          |
+-- Note that the only columns we may use in the select statement are the aggregation and the GROUP BY
+--  clause (AVG(runtime) and artist)
+-- TODO: Use the `GROUP BY` clause with the `SUM()` aggregate function to query the song table for
+--  the total runtimes per-artist, containing two columns: 'artist' and the aggregate function.
