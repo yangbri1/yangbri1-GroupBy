@@ -2,7 +2,7 @@
 import java.util.Objects;
 
 public class Song {
-    private Integer id;
+    private Integer id; // declared instance variables
     private String artist;
     private String album;
     private String song;
@@ -13,7 +13,7 @@ public class Song {
         this.album = album;
         this.song = song;
     }
-
+    // overloading above method
     public Song(String artist, String album, String song) {
         this.artist = artist;
         this.album = album;
@@ -22,11 +22,11 @@ public class Song {
 
     public Song() {
     }
-
+    // getter method to get Id
     public Integer getId() {
         return id;
     }
-
+    // setter method to set above instance variable 'id' to arg's 'id' value via 'this' reserved keyword
     public void setId(Integer id) {
         this.id = id;
     }
